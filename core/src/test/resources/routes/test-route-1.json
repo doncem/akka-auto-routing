@@ -1,0 +1,17 @@
+[
+  {
+    "resource": "/test1/resources",
+    "method": "GET",
+    "callback": "getTest1Resources"
+  },
+  {
+    "resource": "/test1/resources",
+    "method": "POST",
+    "callback": "postTest1Resources"
+  },
+  {
+    "resource": "/test1/resources/{{id}}",
+    "method": "DELETE",
+    "callback": "deleteTest1Resource"
+  }
+]
