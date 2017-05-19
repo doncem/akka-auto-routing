@@ -21,13 +21,8 @@ trait CustomRouting extends ResourceRouting with Directives with JsonSupport {
 
   // extra paths
 
-  protected def withId(id: Long): Directive0 = {
-    args.+=(("id", id))
-    pass
-  }
-
-  protected def withToken(token: String): Directive0 = {
-    args.+=(("token", token))
+  protected def withParam[T](paramName: String, paramType: T): Directive0 = {
+    args.+=((paramName, paramType))
     pass
   }
 

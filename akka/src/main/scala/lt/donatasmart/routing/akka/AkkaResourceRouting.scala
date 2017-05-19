@@ -15,8 +15,11 @@ final class AkkaResourceRouting(val service: Service,
         args = collection.mutable.Map.empty[String, Any]
 
         pathItem match {
-          case ResourceItem.id => folded & pathPrefix(LongNumber).flatMap(withId)
-          case ResourceItem.token => folded & pathPrefix(Segment).flatMap(withToken)
+          case ResourceItem.resourceParamRegex(paramName, paramType) => paramType match {
+            case ResourceItem.resourceTypeInt => folded & pathPrefix(IntNumber).flatMap(withParam(paramName, _))
+            case ResourceItem.resourceTypeLong => folded & pathPrefix(LongNumber).flatMap(withParam(paramName, _))
+            case ResourceItem.resourceTypeString => folded & pathPrefix(Segment).flatMap(withParam(paramName, _))
+          }
           case pathString => folded & pathPrefix(pathString)
         }
       } {

@@ -10,7 +10,7 @@
     "callback": "postTest1Resources"
   },
   {
-    "resource": "/test1/resources/{{id}}",
+    "resource": "/test1/resources/{{id:long}}",
     "method": "DELETE",
     "callback": "deleteTest1Resource"
   }
