@@ -5,12 +5,13 @@ import akka.http.scaladsl.model._
 import akka.http.scaladsl.unmarshalling.{FromResponseUnmarshaller, Unmarshal, Unmarshaller}
 import akka.http.scaladsl.util.FastFuture._
 import akka.stream.Materializer
-import de.heikoseeberger.akkahttpcirce.CirceSupport
+import de.heikoseeberger.akkahttpcirce.FailFastCirceSupport
 import lt.donatasmart.routing.entities.{Error, LibraryError, Result}
 
 import scala.concurrent.{ExecutionContext, Future}
+import scala.language.implicitConversions
 
-trait JsonSupport extends CirceSupport {
+trait JsonSupport extends FailFastCirceSupport {
 
   import JsonSupport._
 

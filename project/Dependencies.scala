@@ -2,8 +2,8 @@ import sbt._
 
 object Dependencies {
 
-  private val akkaV = "10.0.2"
-  private val circeV = "0.7.0"
+  private val akkaV = "10.0.6"
+  private val circeV = "0.8.0"
 
   /*
   entities ------ core ------ akka
@@ -21,16 +21,16 @@ object Dependencies {
   private val http = Seq(
     "com.typesafe.akka" %% "akka-http"          % akkaV,
     "com.typesafe.akka" %% "akka-http-testkit"  % akkaV % Test,
-    "de.heikoseeberger" %% "akka-http-circe"    % "1.12.0"
+    "de.heikoseeberger" %% "akka-http-circe"    % "1.16.1"
   )
 
   private val logging = Seq(
-    "ch.qos.logback"             % "logback-classic"  % "1.1.9",
+    "ch.qos.logback"             % "logback-classic"  % "1.2.2",
     "com.typesafe.scala-logging" %% "scala-logging"   % "3.5.0"
   )
 
   private val tests = Seq(
-    "org.scalatest" %% "scalatest"  % "3.0.1" % Test
+    "org.scalatest" %% "scalatest"  % "3.0.3" % Test
   )
 
 }

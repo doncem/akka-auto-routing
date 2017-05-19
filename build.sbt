@@ -2,7 +2,11 @@ import sbt.Keys._
 
 lazy val commonSettings = Seq(
   version := "1.0",
-  scalaVersion := "2.12.1"
+  scalaVersion := "2.12.2",
+  scalacOptions ++= Seq(
+    "-deprecation",
+    "-feature"
+  )
 )
 
 lazy val entities = (project in file("entities"))
